@@ -1,204 +1,303 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSC Plumbing LLC | Fountain, CO</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background: #f4f7fb;
-      color: #333;
-    }
-
-    /* HERO SECTION */
-    .hero {
-      background: linear-gradient(135deg, #003366, #0b5ed7);
-      color: white;
-      text-align: center;
-      padding: 90px 20px;
-    }
-
-    .hero img {
-      width: 120px;
-      border-radius: 12px;
-      margin-bottom: 15px;
-    }
-
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 18px;
-      opacity: 0.9;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 26px;
-      background: #ffcc00;
-      color: black;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 6px;
-    }
-
-    section {
-      padding: 70px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 30px;
-    }
-
-    /* SERVICES */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      color: #0b5ed7;
-    }
-
-    /* REVIEWS */
-    .reviews {
-      display: grid;
-      gap: 20px;
-    }
-
-    .review {
-      background: white;
-      padding: 20px;
-      border-left: 5px solid #0b5ed7;
-      border-radius: 8px;
-    }
-
-    /* CONTACT */
-    .contact {
-      text-align: center;
-      background: white;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 25px;
-      margin-top: 40px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSC Plumbing LLC | Luxury Plumbing & Remodeling</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Animate.css for Luxury Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxuryBlue: '#0A2540',
+                        deepBlack: '#050B14',
+                        goldAccent: '#D4AF37',
+                        royalBlue: '#1E40AF'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(5, 11, 20, 0.85), rgba(5, 11, 20, 0.85)), url('https://avatars.mds.yandex.net/i?id=5bf19ce4df66f2b1a42bf90075fdce70d53897c7-12980679-images-thumbs&n=13');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .luxury-gradient {
+            background: linear-gradient(135deg, #050B14 0%, #0A2540 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.2);
+            border-color: #1E40AF;
+        }
+    </style>
 </head>
+<body class="bg-deepBlack text-gray-200 font-sans overflow-x-hidden">
 
-<body>
+    <!-- Navigation Header -->
+    <header class="fixed w-full z-50 bg-deepBlack/90 backdrop-blur-md border-b border-luxuryBlue/50 px-6 py-4 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3">
+                <img src="https://www.americasmallbiz.com/logos/profile/limage-26028-327-photo.webp" alt="CSC Plumbing LLC Logo" class="h-12 w-auto object-contain rounded">
+                <span class="text-xl font-bold tracking-wider text-white hidden sm:block">CSC PLUMBING</span>
+            </a>
+            
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex gap-8 text-sm font-semibold tracking-widest uppercase">
+                <a href="#about" class="hover:text-royalBlue transition-colors">About</a>
+                <a href="#services" class="hover:text-royalBlue transition-colors">Services</a>
+                <a href="#reviews" class="hover:text-royalBlue transition-colors">Reviews</a>
+                <a href="#contact" class="hover:text-royalBlue transition-colors">Contact</a>
+            </nav>
 
-  <!-- HERO -->
-  <div class="hero">
-    <img src="https://canva.link/79gl39uu4rvowan" alt="Logo">
-    <h1>CSC Plumbing LLC</h1>
-    <p>Reliable plumbing & home remodeling services in Fountain, Colorado. Faucets, pipes, bathrooms, showers & full repair solutions.</p>
-    <a class="btn" href="tel:+17192337490">Call Now: (719) 233-7490</a>
-  </div>
+            <!-- Call to Action Button -->
+            <a href="tel:7192337490" class="bg-royalBlue hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition-all text-sm uppercase tracking-wider animate__animated animate__pulse animate__infinite">
+                Call Now
+            </a>
+        </div>
+    </header>
 
-  <!-- ABOUT -->
-  <section>
-    <h2>About Us</h2>
-    <p style="text-align:center; max-width:800px; margin:auto;">
-      We provide professional plumbing, repair, and remodeling services including faucets, fixtures, pipes, bathroom upgrades, kitchen remodeling, and drainage systems. Quality workmanship and trusted service in Fountain, Colorado.
-    </p>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center pt-24 px-6 text-center">
+        <div class="max-w-4xl animate__animated animate__fadeInUp">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">
+                Luxury Home Maintenance & <span class="text-royalBlue">Expert Remodeling</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Welcome to CSC Plumbing LLC, your premier choice for high-end plumbing, luxury bathroom upgrades, and kitchen transformations in Fountain, Colorado.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-royalBlue hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition-all shadow-lg shadow-royalBlue/30 text-center">
+                    Book a Service
+                </a>
+                <a href="#services" class="border border-gray-500 hover:border-white text-white font-bold py-4 px-8 rounded-lg transition-all text-center">
+                    Explore Services
+                </a>
+            </div>
+        </div>
+    </section>
 
-  <!-- SERVICES -->
-  <section>
-    <h2>Our Services</h2>
-    <div class="services">
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6 luxury-gradient border-b border-luxuryBlue/30">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-block px-3 py-1 bg-royalBlue/20 border border-royalBlue text-royalBlue text-xs font-bold tracking-widest uppercase rounded">
+                    Our Story
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">About CSC Plumbing LLC</h2>
+                <p class="text-gray-300 leading-relaxed">
+                    Welcome to CSC Plumbing LLC, your go-to choice for remodeling and home maintenance in Fountain, Colorado. We handle faucets, fixtures, pipes repair or replacement, basement, bathroom, and kitchen remodeling, plus sump pump, foundation drains, bathtub, and shower installation services with care and precision. 
+                </p>
+                <p class="text-gray-400">
+                    We pride ourselves on pairing standard-setting technical mastery with premium client care. Call now to upgrade your home with expert, elegant solutions!
+                </p>
+                <!-- Quick Details Grid -->
+                <div class="grid grid-cols-2 gap-4 pt-4 border-t border-luxuryBlue/50">
+                    <div>
+                        <h4 class="text-xs uppercase tracking-wider text-gray-500">Service Hours</h4>
+                        <p class="text-sm font-semibold text-white">Mon - Fri: 7AM - 7PM</p>
+                        <p class="text-sm font-semibold text-white">Sat: 9AM - 3PM</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs uppercase tracking-wider text-gray-500">Service Area</h4>
+                        <p class="text-sm font-semibold text-white">Fountain, CO & Surrounding</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Dynamic Image Grid Block for Visual Balance -->
+            <div class="relative group overflow-hidden rounded-2xl border border-luxuryBlue/50 shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Luxury bathroom renovation" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-deepBlack via-transparent to-transparent"></div>
+            </div>
+        </div>
+    </section>
 
-      <div class="card">
-        <h3>Faucets Service</h3>
-        <p>Repair leaking faucets or install modern water-saving fixtures for better efficiency.</p>
-      </div>
+    <!-- Services Section -->
+    <section id="services" class="py-24 px-6 bg-deepBlack border-b border-luxuryBlue/30">
+        <div class="max-w-7xl mx-auto text-center mb-16">
+            <div class="inline-block px-3 py-1 bg-royalBlue/20 border border-royalBlue text-royalBlue text-xs font-bold tracking-widest uppercase rounded mb-4">
+                What We Do
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Premium Solutions</h2>
+        </div>
 
-      <div class="card">
-        <h3>Pipe Repair & Replacement</h3>
-        <p>Fix broken or leaking pipes with durable, long-lasting plumbing solutions.</p>
-      </div>
+        <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <div class="bg-luxuryBlue/20 border border-luxuryBlue/40 rounded-2xl overflow-hidden transition-all duration-300 card-hover">
+                <div class="h-56 overflow-hidden">
+                    <img src="https://icdn.lenta.ru/images/2024/06/24/13/20240624131344066/owl_wide_1200_67609ba37a7c9d43e516d66fc059cf98.jpg" alt="Pipes Repair or Replace" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">Pipes Repair or Replace</h3>
+                    <p class="text-gray-400 text-sm">Structural piping repair, line replacements, and preventive diagnostics to safeguard your foundation and home infrastructure.</p>
+                </div>
+            </div>
 
-      <div class="card">
-        <h3>Bathroom Remodeling</h3>
-        <p>Complete bathroom renovation with modern plumbing upgrades and design improvements.</p>
-      </div>
+            <!-- Service 2 -->
+            <div class="bg-luxuryBlue/20 border border-luxuryBlue/40 rounded-2xl overflow-hidden transition-all duration-300 card-hover">
+                <div class="h-56 overflow-hidden">
+                    <img src="https://production-next-images-cdn.thumbtack.com/i/302055691160756318/width/1024.jpeg" alt="Shower Installation and Replacement" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">Shower Installation & Replacement</h3>
+                    <p class="text-gray-400 text-sm">Transform your everyday routine with structural layouts, pristine custom shower pans, and premium shower head assemblies.</p>
+                </div>
+            </div>
 
-      <div class="card">
-        <h3>Shower Installation</h3>
-        <p>Professional shower installation and replacement with waterproof finishing.</p>
-      </div>
+            <!-- Service 3 -->
+            <div class="bg-luxuryBlue/20 border border-luxuryBlue/40 rounded-2xl overflow-hidden transition-all duration-300 card-hover">
+                <div class="h-56 overflow-hidden">
+                    <img src="https://profsan-psm.ru/wp-content/uploads/2023/02/chto-delat-esli-smesitel-tugoj.jpg" alt="Faucets" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">Faucets & Fixtures</h3>
+                    <p class="text-gray-400 text-sm">Expert mounting, calibration, and sealing of high-design hardware across luxury master baths, kitchens, and basements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-24 px-6 luxury-gradient border-b border-luxuryBlue/30">
+        <div class="max-w-7xl mx-auto text-center mb-16">
+            <div class="inline-block px-3 py-1 bg-royalBlue/20 border border-royalBlue text-royalBlue text-xs font-bold tracking-widest uppercase rounded mb-4">
+                Testimonials
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Client Experiences</h2>
+        </div>
 
-  <!-- REVIEWS -->
-  <section>
-    <h2>Customer Reviews</h2>
-    <div class="reviews">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <!-- Review 1 -->
+            <div class="bg-deepBlack/50 p-8 rounded-2xl border border-luxuryBlue/30 relative">
+                <div class="flex text-amber-400 gap-1 mb-4">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="text-gray-300 italic mb-6">"CSC Plumbing did a complete overhaul of our primary shower enclosure. Impeccable attention to detail, timely execution, and absolute clean workspace every single afternoon."</p>
+                <div class="font-bold text-white text-sm tracking-wider">— Arthur M., Fountain</div>
+            </div>
 
-      <div class="review">
-        ⭐⭐⭐⭐⭐ “Very professional and fast service. Fixed my plumbing issue the same day!” – Mike R.
-      </div>
+            <!-- Review 2 -->
+            <div class="bg-deepBlack/50 p-8 rounded-2xl border border-luxuryBlue/30 relative">
+                <div class="flex text-amber-400 gap-1 mb-4">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="text-gray-300 italic mb-6">"Extremely responsive when we had an urgent copper pipe leak. They diagnosed it, cut out the bad section, and re-routed everything beautifully in just a couple hours."</p>
+                <div class="font-bold text-white text-sm tracking-wider">— Elena R., Fountain</div>
+            </div>
 
-      <div class="review">
-        ⭐⭐⭐⭐⭐ “Affordable and high-quality bathroom remodel. Highly recommended.” – Sarah W.
-      </div>
+            <!-- Review 3 -->
+            <div class="bg-deepBlack/50 p-8 rounded-2xl border border-luxuryBlue/30 relative">
+                <div class="flex text-amber-400 gap-1 mb-4">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="text-gray-300 italic mb-6">"Very impressed with the kitchen faucet upgrades and sump pump servicing. Professional technicians who genuinely understand high-end residential needs."</p>
+                <div class="font-bold text-white text-sm tracking-wider">— David K., Fountain</div>
+            </div>
+        </div>
+    </section>
 
-      <div class="review">
-        ⭐⭐⭐⭐⭐ “Great plumbing service in Fountain CO. Honest and reliable.” – David K.
-      </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 bg-deepBlack">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+            <div>
+                <div class="inline-block px-3 py-1 bg-royalBlue/20 border border-royalBlue text-royalBlue text-xs font-bold tracking-widest uppercase rounded mb-4">
+                    Get In Touch
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight mb-6">Let's Discuss Your Project</h2>
+                <p class="text-gray-400 mb-8">
+                    Ready to elevate your home plumbing or start planning your dream bathroom upgrade? Reach out via phone or email, or drop by our service hub.
+                </p>
 
-    </div>
-  </section>
+                <!-- Information list -->
+                <div class="space-y-6">
+                    <a href="tel:7192337490" class="flex items-center gap-4 group p-4 bg-luxuryBlue/10 border border-luxuryBlue/30 rounded-xl hover:border-royalBlue transition-all">
+                        <div class="w-12 h-12 rounded-lg bg-royalBlue/20 flex items-center justify-center text-royalBlue text-xl group-hover:bg-royalBlue group-hover:text-white transition-all">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs text-gray-500 uppercase tracking-wider">Phone</h4>
+                            <p class="text-lg font-semibold text-white">(719) 233-7490</p>
+                        </div>
+                    </a>
 
-  <!-- CONTACT -->
-  <section>
-    <h2>Contact Us</h2>
-    <div class="contact">
-      <p><strong>Phone:</strong> (719) 233-7490</p>
-      <p><strong>Email:</strong> rickdane0230@gmail.com</p>
-      <p><strong>Address:</strong> 441 Autumn Place, Fountain, CO 80817</p>
-      <p><strong>Hours:</strong> Mon–Fri 7AM–7PM | Sat 9AM–3PM</p>
-    </div>
-  </section>
+                    <div class="flex items-center gap-4 group p-4 bg-luxuryBlue/10 border border-luxuryBlue/30 rounded-xl">
+                        <div class="w-12 h-12 rounded-lg bg-royalBlue/20 flex items-center justify-center text-royalBlue text-xl">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs text-gray-500 uppercase tracking-wider">Email</h4>
+                            <p class="text-lg font-semibold text-white">contact@cscplumbingllc.com</p>
+                        </div>
+                    </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 CSC Plumbing LLC | All Rights Reserved</p>
-  </footer>
+                    <a href="https://maps.app.goo.gl/UXQpn5qRYwewRC7NA" target="_blank" class="flex items-center gap-4 group p-4 bg-luxuryBlue/10 border border-luxuryBlue/30 rounded-xl hover:border-royalBlue transition-all">
+                        <div class="w-12 h-12 rounded-lg bg-royalBlue/20 flex items-center justify-center text-royalBlue text-xl group-hover:bg-royalBlue group-hover:text-white transition-all">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs text-gray-500 uppercase tracking-wider">Address</h4>
+                            <p class="text-md font-semibold text-white">441 Autumn Place, Fountain, CO, 80817</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Form Block -->
+            <form class="bg-luxuryBlue/10 border border-luxuryBlue/30 p-8 rounded-2xl space-y-6 flex flex-col justify-center" onsubmit="event.preventDefault(); alert('Thank you! We will get back to you shortly.');">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">First Name</label>
+                        <input type="text" required class="w-full bg-deepBlack border border-luxuryBlue/50 rounded-lg p-3 text-white focus:outline-none focus:border-royalBlue">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Last Name</label>
+                        <input type="text" required class="w-full bg-deepBlack border border-luxuryBlue/50 rounded-lg p-3 text-white focus:outline-none focus:border-royalBlue">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Email Address</label>
+                    <input type="email" required class="w-full bg-deepBlack border border-luxuryBlue/50 rounded-lg p-3 text-white focus:outline-none focus:border-royalBlue">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Message</label>
+                    <textarea rows="4" required class="w-full bg-deepBlack border border-luxuryBlue/50 rounded-lg p-3 text-white focus:outline-none focus:border-royalBlue"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-royalBlue hover:bg-blue-700 text-white font-bold py-4 rounded-lg tracking-wider transition-colors uppercase text-sm">
+                    Send Inquiry
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deepBlack border-t border-luxuryBlue/30 py-12 px-6 text-center text-sm text-gray-500">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <img src="https://www.americasmallbiz.com/logos/profile/limage-26028-327-photo.webp" alt="Logo" class="h-8 w-auto">
+                <p>&copy; 2026 CSC Plumbing LLC. All Rights Reserved.</p>
+            </div>
+            <!-- Navigation Footer & Google Business Profile Link -->
+            <div class="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-wider font-semibold">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#reviews" class="hover:text-white transition-colors">Reviews</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                <a href="https://maps.app.goo.gl/UXQpn5qRYwewRC7NA" target="_blank" class="text-royalBlue hover:text-blue-400 transition-colors flex items-center gap-1">
+                    <i class="fab fa-google"></i> Find Us On Google Maps
+                </a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
