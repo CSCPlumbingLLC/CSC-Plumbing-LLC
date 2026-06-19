@@ -1,273 +1,673 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSC Plumbing LLC | Luxury Plumbing & Remodeling</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Animate.css for Luxury Animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <!-- FontAwesome for Icons -->
+    <!-- FontAwesome for Premium Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        luxuryBlue: '#0A2540',
-                        deepBlack: '#050B14',
-                        goldAccent: '#D4AF37',
-                        royalBlue: '#1E40AF'
-                    }
-                }
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="family">
+    
+    <style>
+        /* --- LUXURY BLUE & BLACK THEME SYSTEM --- */
+        :root {
+            --primary-gold: #c5a880; /* Subtle elegant accent */
+            --bg-black: #0b0c10;
+            --bg-deep-blue: #1f2833;
+            --electric-blue: #45f3ff;
+            --soft-blue: #66fcf1;
+            --text-white: #ffffff;
+            --text-gray: #c5c6c7;
+            --card-bg: #151c24;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-black);
+            color: var(--text-white);
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 12, 16, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(69, 243, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 50px;
+            border-radius: 5px;
+            border: 1px solid var(--soft-blue);
+        }
+
+        .logo span {
+            font-family: 'Cinzel', serif;
+            color: var(--text-white);
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--soft-blue);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--soft-blue);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(rgba(11, 12, 16, 0.8), rgba(11, 12, 16, 0.85)), 
+                        url('https://avatars.mds.yandex.net/i?id=5bf19ce4df66f2b1a42bf90075fdce70d53897c7-12980679-images-thumbs&n=13') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s forwards 0.3s;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ffffff, var(--soft-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .btn-luxury {
+            display: inline-block;
+            padding: 15px 35px;
+            background: transparent;
+            color: var(--soft-blue);
+            border: 2px solid var(--soft-blue);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            transition: var(--transition);
+            box-shadow: 0 0 15px rgba(102, 252, 241, 0.1);
+        }
+
+        .btn-luxury:hover {
+            background: var(--soft-blue);
+            color: var(--bg-black);
+            box-shadow: 0 0 25px rgba(102, 252, 241, 0.4);
+            transform: translateY(-3px);
+        }
+
+        /* --- SECTION STRUCTURE --- */
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            position: relative;
+            color: var(--text-white);
+            letter-spacing: 2px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--soft-blue), transparent);
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .about-meta {
+            margin-top: 30px;
+            border-left: 3px solid var(--soft-blue);
+            padding-left: 20px;
+            font-style: italic;
+            color: #ffffff;
+        }
+
+        .about-img-box {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            border: 1px solid rgba(102, 252, 241, 0.2);
+        }
+
+        .about-img-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-img-box:hover img {
+            transform: scale(1.05);
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--soft-blue);
+            box-shadow: 0 15px 30px rgba(102, 252, 241, 0.15);
+        }
+
+        .service-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-info {
+            padding: 25px;
+        }
+
+        .service-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            font-family: 'Cinzel', serif;
+        }
+
+        /* --- REVIEWS SECTION --- */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: linear-gradient(145deg, #151c24, #0b0c10);
+            padding: 35px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.03);
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .review-card::before {
+            content: "“";
+            font-family: 'Cinzel', serif;
+            font-size: 5rem;
+            color: rgba(102, 252, 241, 0.1);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+
+        .stars {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            color: var(--soft-blue);
+            letter-spacing: 1px;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--soft-blue);
+        }
+
+        .info-item i {
+            font-size: 1.8rem;
+            color: var(--soft-blue);
+        }
+
+        .info-item h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--text-gray);
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .map-wrapper {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(102, 252, 241, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            height: 350px;
+        }
+
+        .map-wrapper iframe {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #050608;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .gmb-footer-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: #1a2536;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid var(--soft-blue);
+            transition: var(--transition);
+        }
+
+        .gmb-footer-btn:hover {
+            background: var(--soft-blue);
+            color: var(--bg-black);
+            box-shadow: 0 0 15px rgba(102, 252, 241, 0.3);
+        }
+
+        .gmb-footer-btn i {
+            color: #4285F4; /* Google Blue */
+        }
+        
+        .gmb-footer-btn:hover i {
+            color: var(--bg-black);
+        }
+
+        .copyright {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
-    </script>
-    <style>
-        .hero-bg {
-            background-image: linear-gradient(rgba(5, 11, 20, 0.85), rgba(5, 11, 20, 0.85)), url('https://avatars.mds.yandex.net/i?id=5bf19ce4df66f2b1a42bf90075fdce70d53897c7-12980679-images-thumbs&n=13');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+
+        /* Scroll Animation Triggers via JS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
         }
-        .luxury-gradient {
-            background: linear-gradient(135deg, #050B14 0%, #0A2540 100%);
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.2);
-            border-color: #1E40AF;
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 968px) {
+            .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            nav ul {
+                display: none; /* Can be enhanced to burger menu if needed */
+            }
         }
     </style>
 </head>
-<body class="bg-deepBlack text-gray-200 font-sans overflow-x-hidden">
+<body>
 
-    <!-- Navigation Header -->
-    <header class="fixed w-full z-50 bg-deepBlack/90 backdrop-blur-md border-b border-luxuryBlue/50 px-6 py-4 transition-all duration-300">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <!-- Logo -->
-            <a href="#" class="flex items-center gap-3">
-                <img src="https://www.americasmallbiz.com/logos/profile/limage-26028-327-photo.webp" alt="CSC Plumbing LLC Logo" class="h-12 w-auto object-contain rounded">
-                <span class="text-xl font-bold tracking-wider text-white hidden sm:block">CSC PLUMBING</span>
+    <!-- NAVIGATION HEADER -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="https://www.americasmallbiz.com/logos/profile/limage-26028-327-photo.webp" alt="CSC Plumbing LLC Logo">
+                <span>CSC Plumbing</span>
             </a>
-            
-            <!-- Navigation Links -->
-            <nav class="hidden md:flex gap-8 text-sm font-semibold tracking-widest uppercase">
-                <a href="#about" class="hover:text-royalBlue transition-colors">About</a>
-                <a href="#services" class="hover:text-royalBlue transition-colors">Services</a>
-                <a href="#reviews" class="hover:text-royalBlue transition-colors">Reviews</a>
-                <a href="#contact" class="hover:text-royalBlue transition-colors">Contact</a>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </nav>
-
-            <!-- Call to Action Button -->
-            <a href="tel:7192337490" class="bg-royalBlue hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition-all text-sm uppercase tracking-wider animate__animated animate__pulse animate__infinite">
-                Call Now
-            </a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-bg min-h-screen flex items-center justify-center pt-24 px-6 text-center">
-        <div class="max-w-4xl animate__animated animate__fadeInUp">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">
-                Luxury Home Maintenance & <span class="text-royalBlue">Expert Remodeling</span>
-            </h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Welcome to CSC Plumbing LLC, your premier choice for high-end plumbing, luxury bathroom upgrades, and kitchen transformations in Fountain, Colorado.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#contact" class="bg-royalBlue hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition-all shadow-lg shadow-royalBlue/30 text-center">
-                    Book a Service
-                </a>
-                <a href="#services" class="border border-gray-500 hover:border-white text-white font-bold py-4 px-8 rounded-lg transition-all text-center">
-                    Explore Services
-                </a>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>CSC Plumbing LLC</h1>
+            <p>Your go-to choice for remodeling and elite home maintenance in Fountain, Colorado. Crafted solutions executed with precision care.</p>
+            <a href="#contact" class="btn-luxury">Schedule A Service</a>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="reveal">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>Welcome to CSC Plumbing LLC, your reliable premier expert for plumbing modifications and residential maintenance upgrades in Fountain, Colorado.</p>
+                <p>We handle faucets, fixtures, specialized pipe work, alongside comprehensive basement, bathroom, and kitchen remodeling. At CSC Plumbing LLC, we blend functional craftsmanship with luxury precision to bring you durability you can trust.</p>
+                <div class="about-meta">
+                    <p><i class="fa-solid fa-clock" style="color: var(--soft-blue); margin-right: 10px;"></i> <strong>Hours of Operation:</strong><br>Mon to Fri: 7:00 AM - 7:00 PM<br>Sat: 9:00 AM - 3:00 PM</p>
+                </div>
+            </div>
+            <div class="about-img-box">
+                <!-- Using Hero background style placeholder as the specific layout requested for general section display -->
+                <img src="https://avatars.mds.yandex.net/i?id=5bf19ce4df66f2b1a42bf90075fdce70d53897c7-12980679-images-thumbs&n=13" alt="CSC Plumbing Premium Craftsmanship">
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 px-6 luxury-gradient border-b border-luxuryBlue/30">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-                <div class="inline-block px-3 py-1 bg-royalBlue/20 border border-royalBlue text-royalBlue text-xs font-bold tracking-widest uppercase rounded">
-                    Our Story
-                </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">About CSC Plumbing LLC</h2>
-                <p class="text-gray-300 leading-relaxed">
-                    Welcome to CSC Plumbing LLC, your go-to choice for remodeling and home maintenance in Fountain, Colorado. We handle faucets, fixtures, pipes repair or replacement, basement, bathroom, and kitchen remodeling, plus sump pump, foundation drains, bathtub, and shower installation services with care and precision. 
-                </p>
-                <p class="text-gray-400">
-                    We pride ourselves on pairing standard-setting technical mastery with premium client care. Call now to upgrade your home with expert, elegant solutions!
-                </p>
-                <!-- Quick Details Grid -->
-                <div class="grid grid-cols-2 gap-4 pt-4 border-t border-luxuryBlue/50">
-                    <div>
-                        <h4 class="text-xs uppercase tracking-wider text-gray-500">Service Hours</h4>
-                        <p class="text-sm font-semibold text-white">Mon - Fri: 7AM - 7PM</p>
-                        <p class="text-sm font-semibold text-white">Sat: 9AM - 3PM</p>
-                    </div>
-                    <div>
-                        <h4 class="text-xs uppercase tracking-wider text-gray-500">Service Area</h4>
-                        <p class="text-sm font-semibold text-white">Fountain, CO & Surrounding</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Dynamic Image Grid Block for Visual Balance -->
-            <div class="relative group overflow-hidden rounded-2xl border border-luxuryBlue/50 shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Luxury bathroom renovation" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105">
-                <div class="absolute inset-0 bg-gradient-to-t from-deepBlack via-transparent to-transparent"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-24 px-6 bg-deepBlack border-b border-luxuryBlue/30">
-        <div class="max-w-7xl mx-auto text-center mb-16">
-            <div class="inline-block px-3 py-1 bg-royalBlue/20 border border-royalBlue text-royalBlue text-xs font-bold tracking-widest uppercase rounded mb-4">
-                What We Do
-            </div>
-            <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Premium Solutions</h2>
-        </div>
-
-        <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- SERVICES SECTION -->
+    <section id="services" class="reveal">
+        <h2 class="section-title">Our Premium Services</h2>
+        <div class="services-grid">
+            
             <!-- Service 1 -->
-            <div class="bg-luxuryBlue/20 border border-luxuryBlue/40 rounded-2xl overflow-hidden transition-all duration-300 card-hover">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://icdn.lenta.ru/images/2024/06/24/13/20240624131344066/owl_wide_1200_67609ba37a7c9d43e516d66fc059cf98.jpg" alt="Pipes Repair or Replace" class="w-full h-full object-cover">
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://icdn.lenta.ru/images/2024/06/24/13/20240624131344066/owl_wide_1200_67609ba37a7c9d43e516d66fc059cf98.jpg" alt="Pipes Repair or Replace">
                 </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-white mb-2">Pipes Repair or Replace</h3>
-                    <p class="text-gray-400 text-sm">Structural piping repair, line replacements, and preventive diagnostics to safeguard your foundation and home infrastructure.</p>
+                <div class="service-info">
+                    <h3>Pipes Repair or Replace</h3>
+                    <p>Advanced line diagnostic repairs and structural piping replacement carried out safely to secure flawless water system distribution.</p>
                 </div>
             </div>
 
             <!-- Service 2 -->
-            <div class="bg-luxuryBlue/20 border border-luxuryBlue/40 rounded-2xl overflow-hidden transition-all duration-300 card-hover">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://production-next-images-cdn.thumbtack.com/i/302055691160756318/width/1024.jpeg" alt="Shower Installation and Replacement" class="w-full h-full object-cover">
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://production-next-images-cdn.thumbtack.com/i/302055691160756318/width/1024.jpeg" alt="Shower Installation and Replacement">
                 </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-white mb-2">Shower Installation & Replacement</h3>
-                    <p class="text-gray-400 text-sm">Transform your everyday routine with structural layouts, pristine custom shower pans, and premium shower head assemblies.</p>
+                <div class="service-info">
+                    <h3>Shower Installation & Replacement</h3>
+                    <p>Elevate your everyday routine with modern custom shower builds, premium hardware fitments, and dynamic design replacements.</p>
                 </div>
             </div>
 
             <!-- Service 3 -->
-            <div class="bg-luxuryBlue/20 border border-luxuryBlue/40 rounded-2xl overflow-hidden transition-all duration-300 card-hover">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://profsan-psm.ru/wp-content/uploads/2023/02/chto-delat-esli-smesitel-tugoj.jpg" alt="Faucets" class="w-full h-full object-cover">
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://profsan-psm.ru/wp-content/uploads/2023/02/chto-delat-esli-smesitel-tugoj.jpg" alt="Faucets">
                 </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-white mb-2">Faucets & Fixtures</h3>
-                    <p class="text-gray-400 text-sm">Expert mounting, calibration, and sealing of high-design hardware across luxury master baths, kitchens, and basements.</p>
+                <div class="service-info">
+                    <h3>Faucets & Fixtures</h3>
+                    <p>Luxury updates and reliable installations of sleek high-end faucets, kitchen sprayers, and vanity hardware setups.</p>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- Reviews Section -->
-    <section id="reviews" class="py-24 px-6 luxury-gradient border-b border-luxuryBlue/30">
-        <div class="max-w-7xl mx-auto text-center mb-16">
-            <div class="inline-block px-3 py-1 bg-royalBlue/20 border border-royalBlue text-royalBlue text-xs font-bold tracking-widest uppercase rounded mb-4">
-                Testimonials
-            </div>
-            <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Client Experiences</h2>
-        </div>
-
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-            <!-- Review 1 -->
-            <div class="bg-deepBlack/50 p-8 rounded-2xl border border-luxuryBlue/30 relative">
-                <div class="flex text-amber-400 gap-1 mb-4">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+    <!-- REVIEWS SECTION -->
+    <section id="reviews" class="reveal">
+        <h2 class="section-title">Customer Reviews</h2>
+        <div class="reviews-grid">
+            
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <p class="text-gray-300 italic mb-6">"CSC Plumbing did a complete overhaul of our primary shower enclosure. Impeccable attention to detail, timely execution, and absolute clean workspace every single afternoon."</p>
-                <div class="font-bold text-white text-sm tracking-wider">— Arthur M., Fountain</div>
+                <p class="review-text">"CSC Plumbing completely transformed our master bathroom remodel. They handled our complex new pipes and luxury shower hardware seamlessly. Incredibly professional team!"</p>
+                <p class="reviewer-name">- Eleanor R., Fountain, CO</p>
             </div>
 
-            <!-- Review 2 -->
-            <div class="bg-deepBlack/50 p-8 rounded-2xl border border-luxuryBlue/30 relative">
-                <div class="flex text-amber-400 gap-1 mb-4">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <p class="text-gray-300 italic mb-6">"Extremely responsive when we had an urgent copper pipe leak. They diagnosed it, cut out the bad section, and re-routed everything beautifully in just a couple hours."</p>
-                <div class="font-bold text-white text-sm tracking-wider">— Elena R., Fountain</div>
+                <p class="review-text">"Fast response when my kitchen faucet failed. They replaced it quickly and even gave our lines a checkup. Highly recommend their plumbing services."</p>
+                <p class="reviewer-name">- Marcus T., Fountain, CO</p>
             </div>
 
-            <!-- Review 3 -->
-            <div class="bg-deepBlack/50 p-8 rounded-2xl border border-luxuryBlue/30 relative">
-                <div class="flex text-amber-400 gap-1 mb-4">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <p class="text-gray-300 italic mb-6">"Very impressed with the kitchen faucet upgrades and sump pump servicing. Professional technicians who genuinely understand high-end residential needs."</p>
-                <div class="font-bold text-white text-sm tracking-wider">— David K., Fountain</div>
+                <p class="review-text">"Honest pricing and clean execution. The basement drainage upgrade was handled with real care and precision. They are my permanent home maintenance team now."</p>
+                <p class="reviewer-name">- Jameson K., Fountain, CO</p>
             </div>
+
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 px-6 bg-deepBlack">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-            <div>
-                <div class="inline-block px-3 py-1 bg-royalBlue/20 border border-royalBlue text-royalBlue text-xs font-bold tracking-widest uppercase rounded mb-4">
-                    Get In Touch
-                </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight mb-6">Let's Discuss Your Project</h2>
-                <p class="text-gray-400 mb-8">
-                    Ready to elevate your home plumbing or start planning your dream bathroom upgrade? Reach out via phone or email, or drop by our service hub.
-                </p>
-
-                <!-- Information list -->
-                <div class="space-y-6">
-                    <a href="tel:7192337490" class="flex items-center gap-4 group p-4 bg-luxuryBlue/10 border border-luxuryBlue/30 rounded-xl hover:border-royalBlue transition-all">
-                        <div class="w-12 h-12 rounded-lg bg-royalBlue/20 flex items-center justify-center text-royalBlue text-xl group-hover:bg-royalBlue group-hover:text-white transition-all">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xs text-gray-500 uppercase tracking-wider">Phone</h4>
-                            <p class="text-lg font-semibold text-white">(719) 233-7490</p>
-                        </div>
-                    </a>
-
-                    <div class="flex items-center gap-4 group p-4 bg-luxuryBlue/10 border border-luxuryBlue/30 rounded-xl">
-                        <div class="w-12 h-12 rounded-lg bg-royalBlue/20 flex items-center justify-center text-royalBlue text-xl">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xs text-gray-500 uppercase tracking-wider">Email</h4>
-                            <p class="text-lg font-semibold text-white">contact@cscplumbingllc.com</p>
-                        </div>
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="reveal">
+        <h2 class="section-title">Connect With Us</h2>
+        <div class="contact-grid">
+            
+            <div class="contact-info-box">
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <h4>Call Us</h4>
+                        <p><a href="tel:7192337490" style="color:inherit; text-decoration:none;">(719) 233-7490</a></p>
                     </div>
+                </div>
 
-                    <a href="https://maps.app.goo.gl/UXQpn5qRYwewRC7NA" target="_blank" class="flex items-center gap-4 group p-4 bg-luxuryBlue/10 border border-luxuryBlue/30 rounded-xl hover:border-royalBlue transition-all">
-                        <div class="w-12 h-12 rounded-lg bg-royalBlue/20 flex items-center justify-center text-royalBlue text-xl group-hover:bg-royalBlue group-hover:text-white transition-all">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xs text-gray-500 uppercase tracking-wider">Address</h4>
-                            <p class="text-md font-semibold text-white">441 Autumn Place, Fountain, CO, 80817</p>
-                        </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h4>Our Location</h4>
+                        <p>441 Autumn Place, Fountain, CO, 80817</p>
+                    </div>
+                </div>
 
-    <!-- Footer -->
-    <footer class="bg-deepBlack border-t border-luxuryBlue/30 py-12 px-6 text-center text-sm text-gray-500">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-3">
-                <img src="https://www.americasmallbiz.com/logos/profile/limage-26028-327-photo.webp" alt="Logo" class="h-8 w-auto">
-                <p>&copy; 2026 CSC Plumbing LLC. All Rights Reserved.</p>
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <h4>Email Address</h4>
+                        <p>cscplumbingllc@gmail.com</p> <!-- Standard logical placement placeholder text -->
+                    </div>
+                </div>
             </div>
-            <!-- Navigation Footer & Google Business Profile Link -->
-            <div class="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-wider font-semibold">
-                <a href="#about" class="hover:text-white transition-colors">About</a>
-                <a href="#services" class="hover:text-white transition-colors">Services</a>
-                <a href="#reviews" class="hover:text-white transition-colors">Reviews</a>
-                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
-                <a href="https://maps.app.goo.gl/UXQpn5qRYwewRC7NA" target="_blank" class="text-royalBlue hover:text-blue-400 transition-colors flex items-center gap-1">
-                    <i class="fab fa-google"></i> Find Us On Google Maps
-                </a>
+
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059417.7028988954!2d-105.550863!3d38.99794645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465d76fadb2c487%3A0xf179366a49804a19!2sCSC%20Plumbing%20LLC!5e1!3m2!1sen!2s!4v1781905088344!5m2!1sen!2s" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="footer-container">
+            <!-- GMB Navigation Link Requested -->
+            <a href="https://maps.google.com/?cid=17400139744955746841" target="_blank" rel="noopener" class="gmb-footer-btn">
+                <i class="fa-brands fa-google"></i> View Us On Google Business Profile
+            </a>
+            <p class="copyright">&copy; 2026 CSC Plumbing LLC. All Rights Reserved. Professional Remodeling & Plumb Experts.</p>
         </div>
     </footer>
 
+    <!-- INTERACTIVE SCROLL ANIMATION SCRIPT -->
+    <script>
+        window.addEventListener('scroll', revealElements);
+
+        function revealElements() {
+            const reveals = document.querySelectorAll('.reveal');
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        
+        // Trigger right away for above-the-fold content visibility processing
+        revealElements();
+    </script>
 </body>
 </html>
