@@ -1,56 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CSC Plumbing LLC - Fountain, CO</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSC Plumbing LLC | Fountain, CO</title>
 
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: Arial, sans-serif;
-      line-height: 1.6;
+    }
+
+    body {
       background: #f4f7fb;
       color: #333;
     }
 
-    header {
-      background: linear-gradient(135deg, #0b5ed7, #003366);
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(135deg, #003366, #0b5ed7);
       color: white;
-      padding: 80px 20px;
       text-align: center;
+      padding: 90px 20px;
     }
 
-    header img {
+    .hero img {
       width: 120px;
-      border-radius: 10px;
+      border-radius: 12px;
       margin-bottom: 15px;
     }
 
-    header h1 {
-      margin: 10px 0;
-      font-size: 40px;
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
     }
 
-    header p {
+    .hero p {
       max-width: 700px;
       margin: auto;
       font-size: 18px;
+      opacity: 0.9;
     }
 
     .btn {
       display: inline-block;
       margin-top: 20px;
-      padding: 12px 25px;
+      padding: 12px 26px;
       background: #ffcc00;
-      color: #000;
-      text-decoration: none;
+      color: black;
       font-weight: bold;
+      text-decoration: none;
       border-radius: 6px;
     }
 
     section {
-      padding: 60px 20px;
+      padding: 70px 20px;
       max-width: 1100px;
       margin: auto;
     }
@@ -58,8 +64,10 @@
     h2 {
       text-align: center;
       margin-bottom: 40px;
+      font-size: 30px;
     }
 
+    /* SERVICES */
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -68,11 +76,17 @@
 
     .card {
       background: white;
-      padding: 20px;
+      padding: 25px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
+    .card h3 {
+      margin-bottom: 10px;
+      color: #0b5ed7;
+    }
+
+    /* REVIEWS */
     .reviews {
       display: grid;
       gap: 20px;
@@ -85,95 +99,106 @@
       border-radius: 8px;
     }
 
+    /* CONTACT */
+    .contact {
+      text-align: center;
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
     footer {
       background: #111;
       color: white;
       text-align: center;
-      padding: 30px 20px;
-    }
-
-    .contact {
-      text-align: center;
-      font-size: 16px;
+      padding: 25px;
+      margin-top: 40px;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <img src="https://canva.link/79gl39uu4rvowan" alt="CSC Plumbing Logo">
-  <h1>CSC Plumbing LLC</h1>
-  <p>Your trusted plumbing & home remodeling experts in Fountain, Colorado. Quality work for faucets, pipes, bathrooms, kitchens & more.</p>
-  <a class="btn" href="tel:+17192337490">Call Now: (719) 233-7490</a>
-</header>
-
-<section>
-  <h2>About Us</h2>
-  <p style="text-align:center; max-width:800px; margin:auto;">
-    We specialize in home maintenance and remodeling services including plumbing repairs, fixture installation, bathroom upgrades, kitchen remodeling, and drainage solutions. Our mission is to provide reliable, affordable, and high-quality service to every customer in Fountain, Colorado.
-  </p>
-</section>
-
-<section>
-  <h2>Our Services</h2>
-  <div class="services">
-
-    <div class="card">
-      <h3>Faucets Repair & Installation</h3>
-      <p>Fix leaking faucets or install modern, efficient replacements with professional care.</p>
-    </div>
-
-    <div class="card">
-      <h3>Fixtures & Pipe Repair</h3>
-      <p>We repair and replace damaged pipes and plumbing fixtures to ensure smooth water flow.</p>
-    </div>
-
-    <div class="card">
-      <h3>Bathroom Remodeling</h3>
-      <p>Complete bathroom renovation services including plumbing upgrades and modern designs.</p>
-    </div>
-
-    <div class="card">
-      <h3>Shower Installation</h3>
-      <p>Professional installation and replacement of showers with waterproof and durable fittings.</p>
-    </div>
-
+  <!-- HERO -->
+  <div class="hero">
+    <img src="https://canva.link/79gl39uu4rvowan" alt="Logo">
+    <h1>CSC Plumbing LLC</h1>
+    <p>Reliable plumbing & home remodeling services in Fountain, Colorado. Faucets, pipes, bathrooms, showers & full repair solutions.</p>
+    <a class="btn" href="tel:+17192337490">Call Now: (719) 233-7490</a>
   </div>
-</section>
 
-<section>
-  <h2>Customer Reviews</h2>
-  <div class="reviews">
+  <!-- ABOUT -->
+  <section>
+    <h2>About Us</h2>
+    <p style="text-align:center; max-width:800px; margin:auto;">
+      We provide professional plumbing, repair, and remodeling services including faucets, fixtures, pipes, bathroom upgrades, kitchen remodeling, and drainage systems. Quality workmanship and trusted service in Fountain, Colorado.
+    </p>
+  </section>
 
-    <div class="review">
-      ⭐⭐⭐⭐⭐ "Excellent service! Fixed my leaking pipes quickly and professionally." – John M.
+  <!-- SERVICES -->
+  <section>
+    <h2>Our Services</h2>
+    <div class="services">
+
+      <div class="card">
+        <h3>Faucets Service</h3>
+        <p>Repair leaking faucets or install modern water-saving fixtures for better efficiency.</p>
+      </div>
+
+      <div class="card">
+        <h3>Pipe Repair & Replacement</h3>
+        <p>Fix broken or leaking pipes with durable, long-lasting plumbing solutions.</p>
+      </div>
+
+      <div class="card">
+        <h3>Bathroom Remodeling</h3>
+        <p>Complete bathroom renovation with modern plumbing upgrades and design improvements.</p>
+      </div>
+
+      <div class="card">
+        <h3>Shower Installation</h3>
+        <p>Professional shower installation and replacement with waterproof finishing.</p>
+      </div>
+
     </div>
+  </section>
 
-    <div class="review">
-      ⭐⭐⭐⭐⭐ "Very reliable and affordable. My bathroom remodel looks amazing!" – Sarah K.
+  <!-- REVIEWS -->
+  <section>
+    <h2>Customer Reviews</h2>
+    <div class="reviews">
+
+      <div class="review">
+        ⭐⭐⭐⭐⭐ “Very professional and fast service. Fixed my plumbing issue the same day!” – Mike R.
+      </div>
+
+      <div class="review">
+        ⭐⭐⭐⭐⭐ “Affordable and high-quality bathroom remodel. Highly recommended.” – Sarah W.
+      </div>
+
+      <div class="review">
+        ⭐⭐⭐⭐⭐ “Great plumbing service in Fountain CO. Honest and reliable.” – David K.
+      </div>
+
     </div>
+  </section>
 
-    <div class="review">
-      ⭐⭐⭐⭐⭐ "Highly recommended for any plumbing work in Fountain area." – David R.
+  <!-- CONTACT -->
+  <section>
+    <h2>Contact Us</h2>
+    <div class="contact">
+      <p><strong>Phone:</strong> (719) 233-7490</p>
+      <p><strong>Email:</strong> rickdane0230@gmail.com</p>
+      <p><strong>Address:</strong> 441 Autumn Place, Fountain, CO 80817</p>
+      <p><strong>Hours:</strong> Mon–Fri 7AM–7PM | Sat 9AM–3PM</p>
     </div>
+  </section>
 
-  </div>
-</section>
-
-<section>
-  <h2>Contact Us</h2>
-  <div class="contact">
-    <p><strong>Phone:</strong> (719) 233-7490</p>
-    <p><strong>Email:</strong> rickdane0230@gmail.com</p>
-    <p><strong>Address:</strong> 441 Autumn Place, Fountain, CO 80817</p>
-    <p><strong>Hours:</strong> Mon–Fri 7AM–7PM | Sat 9AM–3PM</p>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 CSC Plumbing LLC. All Rights Reserved.</p>
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 CSC Plumbing LLC | All Rights Reserved</p>
+  </footer>
 
 </body>
 </html>
